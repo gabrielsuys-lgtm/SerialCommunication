@@ -54,7 +54,27 @@ namespace SerialCommunication
 
         private void buttonConnect_Click(object sender, EventArgs e)
         {
-            // abc def ghi jkl
+            try
+            {
+                // abc def ghi jkl
+                if (serialPortArduino.IsOpen)
+                {
+                    // er is verbinding gebruiker wilt geen verbinding maken
+                }
+                else
+                {
+                    // er is geen verbinding gebruiker wilt verbinding maken
+                }
+
+            }
+            catch (Exception exception)
+            {
+                labelStatus.Text = "Error: " + exception.Message;
+
+            }
+            
+
+
         }
     }
 }
