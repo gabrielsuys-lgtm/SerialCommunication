@@ -130,8 +130,50 @@ namespace SerialCommunication
         {
             try
             {
+                serialPortArduino.ReadExisting();
+                string commando = "get a0";
+                serialPortArduino.WriteLine(commando);
+                string antwoord = serialPortArduino.ReadLine();
+                antwoord = antwoord.Trim();
+                antwoord = antwoord.Substring(4);
+                int valueArduinoPotentiometer = Int32.Parse(antwoord);
 
-             
+                const int x1 = 0;
+                const int x2 = 1023;
+                const int y1 = 5;
+                const int y2 = 45;
+
+                double a = (y2 - y1) / (double) (x2 - x1);
+                double b = y1;
+
+                double y = a * valueArduinoPotentiometer + b;
+
+                labelGewensteTemp.Text = y.ToString("0.0") + "ºC";
+
+                serialPortArduino.ReadExisting();
+                commando = "get a1";
+                serialPortArduino.WriteLine(commando);
+                antwoord = serialPortArduino.ReadLine();
+                antwoord = antwoord.Trim();
+                antwoord = antwoord.Substring(4);
+                int valueArduinotemperatuursensor = Int32.Parse(antwoord);
+
+                const int x21 = 500;
+                const int y22 = 1023;
+  
+                double y3 = (double)(x21/y22) *valueArduinotemperatuursensor;
+
+                labelHuidigeTemp.Text = y3.ToString("0.0") + "ºC";
+
+                if(y3<y)
+                {
+                    serialPortArduino.WriteLine("set d2 high");
+                }
+                else
+                {
+                    serialPortArduino.WriteLine("set d2 low");
+
+                }
 
 
             }
