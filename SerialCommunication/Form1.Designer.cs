@@ -90,6 +90,7 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.labelStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.serialPortArduino = new System.IO.Ports.SerialPort(this.components);
+            this.timerOefening5 = new System.Windows.Forms.Timer(this.components);
             this.tabControl.SuspendLayout();
             this.tabPageInstellingen.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -187,7 +188,7 @@
             this.tabPageInstellingen.Controls.Add(this.label4);
             this.tabPageInstellingen.Location = new System.Drawing.Point(4, 22);
             this.tabPageInstellingen.Name = "tabPageInstellingen";
-            this.tabPageInstellingen.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageInstellingen.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageInstellingen.Size = new System.Drawing.Size(776, 391);
             this.tabPageInstellingen.TabIndex = 2;
             this.tabPageInstellingen.Text = "Instellingen";
@@ -497,7 +498,7 @@
             this.tabPageOefening1.Controls.Add(this.checkBoxDigital2);
             this.tabPageOefening1.Location = new System.Drawing.Point(4, 22);
             this.tabPageOefening1.Name = "tabPageOefening1";
-            this.tabPageOefening1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageOefening1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageOefening1.Size = new System.Drawing.Size(776, 391);
             this.tabPageOefening1.TabIndex = 0;
             this.tabPageOefening1.Text = "Oefening 1";
@@ -554,7 +555,7 @@
             this.tabPageOefening2.Controls.Add(this.pictureBox2);
             this.tabPageOefening2.Location = new System.Drawing.Point(4, 22);
             this.tabPageOefening2.Name = "tabPageOefening2";
-            this.tabPageOefening2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageOefening2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageOefening2.Size = new System.Drawing.Size(776, 391);
             this.tabPageOefening2.TabIndex = 1;
             this.tabPageOefening2.Text = "Oefening 2";
@@ -635,7 +636,7 @@
             this.tabPageOefening3.Controls.Add(this.pictureBox3);
             this.tabPageOefening3.Location = new System.Drawing.Point(4, 22);
             this.tabPageOefening3.Name = "tabPageOefening3";
-            this.tabPageOefening3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageOefening3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageOefening3.Size = new System.Drawing.Size(776, 391);
             this.tabPageOefening3.TabIndex = 3;
             this.tabPageOefening3.Text = "Oefening 3";
@@ -693,7 +694,7 @@
             this.tabPageOefening4.Controls.Add(this.pictureBox4);
             this.tabPageOefening4.Location = new System.Drawing.Point(4, 22);
             this.tabPageOefening4.Name = "tabPageOefening4";
-            this.tabPageOefening4.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageOefening4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageOefening4.Size = new System.Drawing.Size(776, 391);
             this.tabPageOefening4.TabIndex = 4;
             this.tabPageOefening4.Text = "Oefening 4";
@@ -728,7 +729,7 @@
             this.tabPageOefening5.Controls.Add(this.pictureBox5);
             this.tabPageOefening5.Location = new System.Drawing.Point(4, 22);
             this.tabPageOefening5.Name = "tabPageOefening5";
-            this.tabPageOefening5.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPageOefening5.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageOefening5.Size = new System.Drawing.Size(776, 391);
             this.tabPageOefening5.TabIndex = 5;
             this.tabPageOefening5.Text = "Oefening 5";
@@ -799,6 +800,10 @@
             // 
             this.labelStatus.Name = "labelStatus";
             this.labelStatus.Size = new System.Drawing.Size(0, 17);
+            // 
+            // timerOefening5
+            // 
+            this.timerOefening5.Tick += new System.EventHandler(this.timerOefening5_Tick);
             // 
             // Form1
             // 
@@ -911,6 +916,7 @@
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel labelStatus;
         private System.IO.Ports.SerialPort serialPortArduino;
+        private System.Windows.Forms.Timer timerOefening5;
     }
 }
 
